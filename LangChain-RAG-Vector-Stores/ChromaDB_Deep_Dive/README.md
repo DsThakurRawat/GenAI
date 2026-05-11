@@ -33,6 +33,11 @@ The structure follows a clean logical separation:
 - **Goal**: Dive into the core engine settings like HNSW and distance metrics.
 - **Key Lesson**: Comparing **Cosine Similarity**, **Euclidean Distance (L2)**, and **Inner Product (IP)**.
 
+### 5. [Expert Features](./05_advanced_filtering_and_upsert.py)
+- **Topic**: Production optimization.
+- **Goal**: Learn how to use **Upsert** for data consistency and **where_document** for text-based filtering.
+- **Key Lesson**: Implementing complex logical filters with `$and` and `$or`.
+
 ---
 
 ## 💡 Top Use Cases for ChromaDB
