@@ -15,5 +15,5 @@ splitter = RecursiveCharacterTextSplitter(
 # Perform the split
 chunks = splitter.split_text(text)
 
-print(len(chunks))
+print(len(chunks))    
 print(chunks)
