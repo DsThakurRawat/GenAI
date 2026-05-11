@@ -1,0 +1,50 @@
+# Mastering LangChain Retrievers
+
+A **Retriever** is a LangChain interface that returns documents given an unstructured query. It is more general than a vector store; a retriever does not need to be able to store documents, only to return (or retrieve) them.
+
+## 1. The Retrieval Pipeline
+As seen in your notes, the retriever sits between the **User Query** and the **Final Documents**.
+1. **Query**: The user asks a question.
+2. **Strategy**: The retriever applies a search strategy (Similarity, MMR, etc.).
+3. **Data Source**: It queries a source (Vector Store, Wikipedia, Arxiv).
+4. **Result**: It returns the relevant documents to the LLM.
+
+---
+
+## 2. Types of Advanced Retrievers
+
+### 🧠 Multi-Query Retriever (Query Expansion)
+- **Problem**: A single user query might be poorly phrased and miss relevant documents that use different words.
+- **Solution**: Uses an LLM to generate multiple versions of the same query. It retrieves documents for EVERY version and combines them.
+- **Result**: Much higher recall (finding more relevant info).
+
+### ✂️ Contextual Compression Retriever
+- **Problem**: A retriever might return a 1000-word document when only 1 sentence is actually relevant. This "noise" confuses the LLM and wastes tokens.
+- **Solution**: After retrieval, a "compressor" (another LLM or filter) extracts only the relevant snippets.
+- **Result**: Cleaner, shorter context for the LLM.
+
+### 🤝 Ensemble Retriever (Hybrid Search)
+- **Logic**: Combines the best of two worlds:
+    - **Vector Search**: Good at finding meaning (Semantic).
+    - **BM25 Search**: Good at finding exact keywords (Keyword).
+- **Result**: Robust search that works well for both concept questions and technical jargon.
+
+### 🗺️ Parent Document Retriever
+- **Logic**: Splits documents into small chunks for better search accuracy (Children), but returns the larger document (Parent) to provide full context to the LLM.
+
+### 🤖 Self-Query Retriever
+- **Logic**: Uses an LLM to parse a natural language query into a **Structured Query** (Metadata filters + Vector search).
+- **Example**: "Find movies about aliens made after 2010" -> `filter: {year: {$gt: 2010}}, query: "aliens"`.
+
+---
+
+## 3. Use Case Matrix
+
+| Retriever | Use Case |
+| :--- | :--- |
+| **Basic Vector** | Simple RAG, general questions. |
+| **Multi-Query** | Complex questions where the phrasing matters. |
+| **Contextual Compression** | Large datasets where precision is critical. |
+| **Ensemble** | Technical documentation with specific keywords. |
+| **Parent Document** | Legal or technical docs where context is vital. |
+| **Self-Query** | Datasets with rich metadata (dates, authors, tags). |
