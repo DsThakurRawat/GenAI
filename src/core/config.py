@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional
 
-class Settings(BaseSettings):
+class Settings(BaseSettings): 
     """
     Application settings and environment variables.
     Pydantic automatically loads these from environment variables or a .env file.
