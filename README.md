@@ -137,6 +137,17 @@ Gen-AI/
 │   ├── 03_mastering_agents_and_langchain_hub.py       # Executable application integrating direct raw hub templates
 │   └── 03_mastering_agents_and_langchain_hub.md       # Full visual sequence mappings comparing AgentExecutor with LangGraph
 │
+├── LangGraph-Multi-Agent-Orchestration/               # Stateful graph state machine systems
+│   ├── 01_langgraph_foundations_state_graphs.py       # Time-travel checkpointer memory maps and explicit reducers
+│   ├── 02_supervisor_multi_agent_router.py            # Centralized Supervisor agent routing sub-agent workflows
+│   ├── 03_human_in_the_loop_approval.py               # Enterprise synchronous security interrupts before sensitive tools
+│   └── langgraph_mastery_guide.md                     # High-density reference manual breaking down graph compiling topologies
+│
+├── Advanced-RAG-Evaluation-and-Safeguards/            # Production safety controls and automated testing frameworks
+│   ├── 01_llm_as_a_judge_quantitative_evals.py        # Localized automated quantitative evaluation pipelines scoring faithfulness
+│   ├── 02_semantic_guardrails_firewall.py             # Middleware security gates blocking malformed string inputs/outputs
+│   └── advanced_evals_and_safety_blueprint.md         # Full visual guide explaining quantitative triads and semantic filters
+│
 └── project-idea-GenAI/                                # High-level design documentation
     └── chromewebpageplugin.md                         # End-to-end technical specification mapping extension frontends to FastAPI
 ```
@@ -167,6 +178,8 @@ Gen-AI/
 - [x] **Direct API Parameter Insertion**: Masking protected inner context strings (e.g., API keys, multipliers) from model inspection windows using `InjectedToolArg` patterns.
 - [x] **Centralized Hub Architecture**: Pulling versioned operational blueprints dynamically via `hub.pull("hwchase17/react")` (`LangChain-end-to-end-agent/`).
 - [x] **State Loop Routing**: Tracing interleaving dialogue arrays (`Thought -> Action -> Observation -> Final Answer`) utilizing classical `AgentExecutor` runtime chains alongside state graph interfaces (**LangGraph**).
+- [x] **Stateful Multi-Agent Orchestration**: Building native cyclical state graphs, time-travel memory saving checkpointers, specialized sub-agent Supervisor routing logic, and synchronous **Human-in-the-Loop** interrupts (`LangGraph-Multi-Agent-Orchestration/`).
+- [x] **Production Quantitative Evaluation**: Running pure Pydantic **LLM-as-a-Judge** scoring pipelines to validate continuous metrics for Groundedness, Faithfulness, and Answer Relevance alongside Semantic Firewalls (`Advanced-RAG-Evaluation-and-Safeguards/`).
 - [x] **Browser Integration Proof-of-Concept**: Defining an extension frontend backed by continuous asynchronous chunked Server-Sent Event API endpoints (`project-idea-GenAI/`).
 
 ---
