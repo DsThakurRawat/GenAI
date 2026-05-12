@@ -11,24 +11,28 @@ graph TD
     classDef rag fill:#1e293b,stroke:#cbd5e1,stroke-width:1px,color:#fff;
     classDef agent fill:#022c22,stroke:#34d399,stroke-width:2px,color:#fff;
 
-    Root["Master Generative AI Workspace Ecosystem"] ::: base
+    Root["Master Generative AI Workspace Ecosystem"]
     
-    Root --> Core["Module 01: Core Framework Primitives"] ::: base
-    Core --> Prompts["Prompting & History Windows"] ::: base
-    Core --> Models["Chat Models & Vector Transformers"] ::: base
-    Core --> Parsers["Output Parsing & Syntax Traps"] ::: base
-    Core --> LCEL["Declarative Pipelines (LCEL)"] ::: base
+    Root --> Core["Module 01: Core Framework Primitives"]
+    Core --> Prompts["Prompting & History Windows"]
+    Core --> Models["Chat Models & Vector Transformers"]
+    Core --> Parsers["Output Parsing & Syntax Traps"]
+    Core --> LCEL["Declarative Pipelines (LCEL)"]
     
-    Root --> RAG["Module 02: Retrieval-Augmented Generation (RAG)"] ::: rag
-    RAG --> Loaders["Document Loaders & Lazy Streaming"] ::: rag
-    RAG --> Chunking["Text Splitters & Semantic Clustering"] ::: rag
-    RAG --> Stores["Vector Stores & Chroma Hierarchy"] ::: rag
-    RAG --> Retrieve["Advanced Retrieval & Hybrid RRF Search"] ::: rag
+    Root --> RAG["Module 02: Retrieval-Augmented Generation (RAG)"]
+    RAG --> Loaders["Document Loaders & Lazy Streaming"]
+    RAG --> Chunking["Text Splitters & Semantic Clustering"]
+    RAG --> Stores["Vector Stores & Chroma Hierarchy"]
+    RAG --> Retrieve["Advanced Retrieval & Hybrid RRF Search"]
     
-    Root --> Agentic["Module 03: Agentic Orchestration"] ::: agent
-    Agentic --> Tools["Tool Binding & InjectedToolArg"] ::: agent
-    Agentic --> Hub["LangChain Hub Centralized Prompts"] ::: agent
-    Agentic --> Loops["AgentExecutor ReAct State Lifecycles"] ::: agent
+    Root --> Agentic["Module 03: Agentic Orchestration"]
+    Agentic --> Tools["Tool Binding & InjectedToolArg"]
+    Agentic --> Hub["LangChain Hub Centralized Prompts"]
+    Agentic --> Loops["AgentExecutor ReAct State Lifecycles"]
+
+    class Root,Core,Prompts,Models,Parsers,LCEL base;
+    class RAG,Loaders,Chunking,Stores,Retrieve rag;
+    class Agentic,Tools,Hub,Loops agent;
 ```
 
 ---
