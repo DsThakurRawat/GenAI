@@ -1,4 +1,4 @@
-# 🚀 Production Generative AI & LangChain Architecture Master Curriculum
+#  Production Generative AI & LangChain Architecture Master Curriculum
 *An enterprise reference codebase bridging theoretical cognitive research, production-level code patterns, declarative LCEL orchestrations, vector database geometries, and autonomous ReAct agent loops.*
 
 ---
